@@ -31,7 +31,8 @@ public class Note {
             if (noteName.equals(notesInOctave[counter])){
                 return counter;
             }
-            else {counter += 1;
+            else {
+                counter += 1;
             }
         }
         throw new IllegalArgumentException("Not a valid note name");
@@ -40,7 +41,6 @@ public class Note {
     private double hzToSemitonesFromA4(double hz){
         double octDiff =  Math.log(hz / A4hz) / Math.log(2.0);
         return semitonesInOctave * octDiff;
-
     }
 
     private int semitonesFromA4FromNoteNumberAndOctive(int noteNumber, int octave){
@@ -76,7 +76,12 @@ public class Note {
     }
 
     public void setHz(double hz) {
-        this.hz = hz;
+        if (hz == 0){
+            this.hz = 440.0;
+        }
+        else {
+            this.hz = hz;
+        }
         calculateNote();
     }
     public void setOctave(int octave) {
@@ -118,4 +123,9 @@ public class Note {
     public String getNoteName() {
         return this.noteName;
     }
+
+    public static String[] getNotesInOctave() {
+        return notesInOctave;
+    }
+
 }

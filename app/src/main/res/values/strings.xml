@@ -3,5 +3,6 @@
     <string name="hz_placeholder">Hz</string>
     <string name="calc_button_placeholder">Calculate</string>
     <string name="nearest_note_placeholder">Nearest Note</string>
+    <string name="octave_placeholder">Octave</string>
     <string name="cent_offset_placeholder">Cent Offset</string>
 </resources>
